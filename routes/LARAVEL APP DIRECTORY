@@ -1,0 +1,21 @@
+LARAVEL APP DIRECTORY 
+
+1) ROUTES:
+-- app -> routes -> web.php : Were all your page web app page routes goes:
+	
+	//Example: IF user visit the home page go to the view (Located in app -> resources ->views->welcome.blade.php)
+	Route::get('/', function () {
+    	return view('welcome'); 
+	});
+
+
+2) RESOURCES:
+	VIEWS:
+		--- app -> resources ->views->welcome.blade.php: Were  our home page route gets its view.
+
+
+3) DATABASE:
+		MIGRATIONS:
+			--- database->migrations->2014_10_12_000000_create_users_table.php: Where you defined schema for the users table
+					--> php artisan migrate : will use this schema to creat the users table structure.
+
