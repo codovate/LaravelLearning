@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 class Post extends Model
 {
-    //
+	//No need to use guarded as we have that definded in the Model we now extending.
 }
