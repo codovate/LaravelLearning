@@ -11,15 +11,15 @@ class PostsController extends Controller
 
 	public function index() {
 		
-		$posts = Post::all();
+		$posts = Post::orderBy('created_at', 'desc')->get();
 
 		return view('posts.index', compact('posts') );
 
     }
 
-    public function show() {
+    public function show(Post $post) {
 
-		return view('posts.show');
+		return view('posts.show', compact('post') );
     }
 
     public function create() {
@@ -28,7 +28,6 @@ class PostsController extends Controller
     }
 
     public function store() {
-
 
     	// Means validate request with this specific rules.
     	$this->validate(request(), [
@@ -41,6 +40,7 @@ class PostsController extends Controller
 
     	//Create a new post using the request data . saving it to the database and then redirect.
 		return redirect('/');
+
 
     }
 
