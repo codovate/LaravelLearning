@@ -30,10 +30,16 @@ class User extends Authenticatable
     /*
     *   User can have many post
     */
-    public function posts () {
+    public function posts() {
 
         return $this->hasMany(Post::class);
     }
 
+    public function publish (Post $post) {
+
+        $this->posts()->save($post);
+    }   
+
+    
 
 }
